@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <Ctype.h>
+
+void peso_ideal (char sexo, float altura)
+
+{
+    float peso_ideal;
+    switch (toupper(sexo))
+
+{
+        case 'F' : peso_ideal = altura *62.1-44.4;
+            break;
+        case 'M' : peso_ideal = altura *72.2-58.0;
+            break;
+        default:   printf ("Sexo invalido! Digite F ou M \n");
+            break;
+
+}
+
+    printf("peso ideal: %.2f \n ", peso_ideal);
+
+
+}
+
+int main ()
+{
+
+    char sexo;
+    float altura;
+
+
+    printf("Digite seu sexo: \n");
+    scanf("%c", &sexo);
+    printf("Digite sua altura (em metros): \n");
+    scanf("%f", &altura);
+
+    peso_ideal(sexo, altura);
+
+    return 0;
+}
